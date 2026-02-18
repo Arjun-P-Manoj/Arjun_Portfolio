@@ -21,7 +21,7 @@ export function SiteFooter() {
           <Link href="/#contact" className="rounded-full bg-primary px-3 py-2 text-xs text-background sm:px-4 sm:text-sm">
             Book Call
           </Link>
-          <div className="ml-0.5 rounded-full border border-border p-1 sm:ml-1">
+          <div className="ml-0.5 hidden rounded-full border border-border p-1 sm:ml-1 sm:block">
             <ThemeToggle />
           </div>
         </div>

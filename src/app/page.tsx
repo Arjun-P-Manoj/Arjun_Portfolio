@@ -118,7 +118,7 @@ export default async function HomePage() {
     fileUrl: "/uploads/resume/Arjun_Resume_2025.pdf",
   };
   const profileImage =
-    safeImage(profile?.profileImage) ?? "/uploads/images/arjun-profile.jpg";
+    safeImage(profile?.profileImage) ?? "/uploads/images/arjun-profile.png";
 
   return (
     <HomeClient

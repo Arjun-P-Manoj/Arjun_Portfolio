@@ -4,15 +4,24 @@ import { AppProvider } from "@/components/providers/app-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
+  icons: {
+    icon: "/uploads/images/logo_arjun_favicon_circle.png",
+    shortcut: "/uploads/images/logo_arjun_favicon_circle.png",
+    apple: "/uploads/images/logo_arjun_favicon_circle.png",
+  },
   title: {
-    default: "Arjun P Manoj | Full Stack Developer",
-    template: "%s | Arjun P Manoj"
+    default: "Arjun P Manoj |Full Stack Dev & AWS Cloud Enthusiast",
+    template: "%s | Arjun P Manoj",
   },
   description:
-    "Professional full stack developer portfolio built with Next.js, TypeScript, Prisma and MongoDB."
+    "AWS Cloud Enthusiast and Full Stack Developer crafting scalable web applications.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>

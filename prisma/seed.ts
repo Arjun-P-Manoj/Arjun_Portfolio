@@ -28,7 +28,7 @@ async function main() {
       email: "arjunpmanoj1@gmail.com",
       phone: "+91 9497623637",
       location: "Thrissur, Kerala",
-      profileImage: "/uploads/images/arjun-profile.jpg",
+      profileImage: "/uploads/images/arjun-profile.png",
     },
     create: {
       key: "default",
@@ -38,7 +38,7 @@ async function main() {
       email: "arjunpmanoj1@gmail.com",
       phone: "+91 9497623637",
       location: "Thrissur, Kerala",
-      profileImage: "/uploads/images/arjun-profile.jpg",
+      profileImage: "/uploads/images/arjun-profile.png",
     },
   });
 
