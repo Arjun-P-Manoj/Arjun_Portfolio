@@ -14,6 +14,9 @@ export default async function HomePage() {
   const safeImage = (value?: string | null) => {
     const src = (value ?? "").trim();
     if (!src) return null;
+    if (src === "/uploads/images/arjun-profile.jpg") {
+      return "/uploads/images/arjun-profile.png";
+    }
     if (src === "/uploads/images/.jpg" || src === "/uploads/images/.png")
       return null;
     if (
