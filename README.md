@@ -49,6 +49,9 @@ NEXTAUTH_URL="http://localhost:3000"
 AUTH_SECRET="replace-with-long-secret"
 ADMIN_EMAIL="admin@example.com"
 ADMIN_PASSWORD="ChangeMe123!"
+CLOUDINARY_CLOUD_NAME="your-cloud-name"
+CLOUDINARY_API_KEY="your-api-key"
+CLOUDINARY_API_SECRET="your-api-secret"
 ```
 
 ## Local Development

@@ -8,14 +8,21 @@ import { projectSchema } from "@/lib/validations";
 import { slugify } from "@/lib/utils";
 
 function parseProjectPayload(formData: FormData) {
+  const normalizeUrl = (value: string) => {
+    const trimmed = value.trim();
+    if (!trimmed) return "";
+    if (/^https?:\/\//i.test(trimmed)) return trimmed;
+    return `https://${trimmed}`;
+  };
+
   return projectSchema.parse({
     id: String(formData.get("id") ?? "") || undefined,
     title: String(formData.get("title") ?? ""),
     summary: String(formData.get("summary") ?? ""),
     description: String(formData.get("description") ?? ""),
     techStack: String(formData.get("techStack") ?? ""),
-    githubUrl: String(formData.get("githubUrl") ?? ""),
-    liveUrl: String(formData.get("liveUrl") ?? ""),
+    githubUrl: normalizeUrl(String(formData.get("githubUrl") ?? "")),
+    liveUrl: normalizeUrl(String(formData.get("liveUrl") ?? "")),
     imageUrl: String(formData.get("imageUrl") ?? ""),
     status: String(formData.get("status") ?? "DRAFT"),
     featured: formData.get("featured") === "on",

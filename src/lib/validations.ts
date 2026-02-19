@@ -1,13 +1,19 @@
 import { z } from "zod";
 
+const optionalHttpUrl = z.preprocess((value) => {
+  const raw = String(value ?? "").trim();
+  if (!raw) return "";
+  return /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+}, z.string().url().or(z.literal("")));
+
 export const projectSchema = z.object({
   id: z.string().optional(),
   title: z.string().min(3),
   summary: z.string().min(8),
   description: z.string().min(20),
   techStack: z.string().min(1),
-  githubUrl: z.string().url().optional().or(z.literal("")),
-  liveUrl: z.string().url().optional().or(z.literal("")),
+  githubUrl: optionalHttpUrl,
+  liveUrl: optionalHttpUrl,
   imageUrl: z.string().optional(),
   status: z.enum(["DRAFT", "PUBLISHED"]),
   featured: z.boolean().default(false),
